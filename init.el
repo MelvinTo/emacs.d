@@ -210,13 +210,6 @@
 ;; disable backup
 (setq make-backup-files nil)
 
-;;
-;;
-;; 
-(add-to-list
- 'package-archives
- '("gnu" . "https://elpa.gnu.org/packages/"))
-
 ;; indent for bash scripts
 (setq sh-basic-offset 2)
 

@@ -70,7 +70,7 @@ If no files marked, always operate on current line in dired-mode."
 
 (defun dired-mode-hook-setup ()
   "Set up dired."
-  (dired-hide-details-mode 1)
+  (dired-hide-details-mode 0)
   (local-set-key  "e" 'my-ediff-files)
   (local-set-key  "/" 'dired-isearch-filenames)
   (local-set-key  "\\" 'diredext-exec-git-command-in-shell))

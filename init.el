@@ -92,7 +92,7 @@
     (my-add-subdirs-to-load-path (file-name-as-directory my-site-lisp-dir)))
 
   ;; Any file use flyspell should be initialized after init-spelling.el
-  (require-init 'init-spelling t)
+;;   (require-init 'init-spelling t)
   (require-init 'init-ibuffer t)
   (require-init 'init-ivy)
   (require-init 'init-windows)
@@ -137,7 +137,7 @@
   (require-init 'init-writting t)
   (require-init 'init-hydra) ; hotkey is required everywhere
   ;; use evil mode (vi key binding)
-  (require-init 'init-evil) ; init-evil dependent on init-clipboard
+;;  (require-init 'init-evil) ; init-evil dependent on init-clipboard
 
   ;; ediff configuration should be last so it can override
   ;; the key bindings in previous configuration
@@ -179,3 +179,62 @@
 ;;; no-byte-compile: t
 ;;; End:
 (put 'erase-buffer 'disabled nil)
+(put 'dired-find-alternate-file 'disabled nil)
+
+;; theme
+(load-theme 'zenburn t)
+
+;; recentf
+(global-set-key "\C-x\C-r" 'counsel-recentf)
+
+(global-set-key "\C-xg" 'magit-status)
+
+
+(defun copy-line ()
+  (interactive)
+  (save-excursion
+    (back-to-indentation)
+    (kill-ring-save
+     (point)
+     (line-end-position)))
+  (message "1 line copied"))
+
+
+(global-set-key "\C-c\C-k" 'copy-line)
+
+
+(defun connect-firett ()
+  (interactive)
+  (dired "/ssh:tt@192.168.1.124:/home/tt/"))
+
+;; disable backup
+(setq make-backup-files nil)
+
+;;
+;;
+;; 
+(add-to-list
+ 'package-archives
+ '("gnu" . "https://elpa.gnu.org/packages/"))
+
+;; indent for bash scripts
+(setq sh-basic-offset 2)
+
+(setq gofmt-command "goimports")
+;; (add-hook 'before-save-hook 'gofmt-before-save)
+
+
+(add-hook 'go-mode-hook
+          (lambda () (define-key go-mode-map (kbd "C-c C-f") #'gofmt)))
+
+(global-set-key (kbd "C-.") 'counsel-etags-find-tag-at-point)
+(global-set-key "\C-c\C-g" 'counsel-git-grep)
+
+
+;;; I prefer cmd key for meta
+;;(setq mac-option-key-is-meta nil
+;;      mac-command-key-is-meta t
+;;      mac-command-modifier 'meta
+;;      mac-option-modifier 'none)
+
+

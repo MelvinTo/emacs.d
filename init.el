@@ -221,7 +221,9 @@
           (lambda () (define-key go-mode-map (kbd "C-c C-f") #'gofmt)))
 
 (global-set-key (kbd "C-.") 'counsel-etags-find-tag-at-point)
-(global-set-key "\C-c\C-g" 'counsel-git-grep)
+(global-set-key "\C-cg" 'counsel-git-grep)
+(global-set-key "\C-cf" 'find-file-in-project-by-selected)
+(global-set-key "\M-/" 'comment-or-uncomment-region)
 
 
 ;;; I prefer cmd key for meta
@@ -231,3 +233,7 @@
 ;;      mac-option-modifier 'none)
 
 
+
+
+(require 'bash-completion)
+(bash-completion-setup)

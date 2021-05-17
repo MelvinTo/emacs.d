@@ -222,8 +222,9 @@
 
 (global-set-key (kbd "C-.") 'counsel-etags-find-tag-at-point)
 (global-set-key "\C-cg" 'counsel-git-grep)
-(global-set-key "\C-cf" 'find-file-in-project-by-selected)
+(global-set-key "\C-cf" 'find-file-in-project)
 (global-set-key "\M-/" 'comment-or-uncomment-region)
+(global-set-key "\C-ck" 'compile)
 
 
 ;;; I prefer cmd key for meta
@@ -237,3 +238,11 @@
 
 (require 'bash-completion)
 (bash-completion-setup)
+
+(rassq-delete-all 'modula-2-mode auto-mode-alist)
+
+
+
+;;(setq-default indent-tabs-mode t)
+;;(setq-default tab-width 4) ; Assuming you want your tabs to be four spaces wide
+;;(defvaralias 'c-basic-offset 'tab-width)

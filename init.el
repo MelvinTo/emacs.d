@@ -182,7 +182,9 @@
 (put 'dired-find-alternate-file 'disabled nil)
 
 ;; theme
-(load-theme 'zenburn t)
+(if (display-graphic-p) 
+    (load-theme 'base16-zenburn t)
+  nil)
 
 ;; recentf
 (global-set-key "\C-x\C-r" 'counsel-recentf)
@@ -220,14 +222,16 @@
 (add-hook 'go-mode-hook
           (lambda () (define-key go-mode-map (kbd "C-c C-f") #'gofmt)))
 
-(global-set-key (kbd "C-.") 'counsel-etags-find-tag-at-point)
-(global-set-key "\C-c\C-g" 'counsel-git-grep)
+(global-set-key "\C-c." 'counsel-etags-find-tag-at-point)
+(global-set-key "\C-cg" 'counsel-git-grep)
+(global-set-key "\C-cf" 'find-file-in-project)
+(global-set-key "\C-ck" 'compile)
 
 
 ;;; I prefer cmd key for meta
-;;(setq mac-option-key-is-meta nil
-;;      mac-command-key-is-meta t
-;;      mac-command-modifier 'meta
-;;      mac-option-modifier 'none)
+(setq mac-option-key-is-meta nil
+      mac-command-key-is-meta t
+      mac-command-modifier 'meta
+      mac-option-modifier 'none))
 
 

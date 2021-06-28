@@ -224,8 +224,20 @@
 (global-set-key "\C-cg" 'counsel-git-grep)
 (global-set-key "\C-cf" 'find-file-in-project)
 (global-set-key "\M-/" 'comment-or-uncomment-region)
-(global-set-key "\C-ck" 'compile)
+(global-set-key "\C-c\C-c" 'compile)
 
+;;Custom Compile Command
+(defun go-mode-setup ()
+  (linum-mode 1)
+;;  (go-eldoc-setup)
+  (setq gofmt-command "goimports")
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  (local-set-key (kbd "M-.") 'godef-jump)
+  (setq compile-command "echo Building... && go build -v && echo Testing... && go test -v && echo Linter... && golint")
+  (setq compilation-read-command nil)
+  (define-key (current-local-map) "\C-c\C-c" 'compile)
+;;  (local-set-key (kbd "M-,") 'compile)
+(add-hook 'go-mode-hook 'go-mode-setup)
 
 ;;; I prefer cmd key for meta
 ;;(setq mac-option-key-is-meta nil

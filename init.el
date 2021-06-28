@@ -182,7 +182,9 @@
 (put 'dired-find-alternate-file 'disabled nil)
 
 ;; theme
-(load-theme 'zenburn t)
+(if (display-graphic-p) 
+    (load-theme 'base16-zenburn t)
+  nil)
 
 ;; recentf
 (global-set-key "\C-x\C-r" 'counsel-recentf)
@@ -240,10 +242,10 @@
 (add-hook 'go-mode-hook 'go-mode-setup)
 
 ;;; I prefer cmd key for meta
-;;(setq mac-option-key-is-meta nil
-;;      mac-command-key-is-meta t
-;;      mac-command-modifier 'meta
-;;      mac-option-modifier 'none)
+(setq mac-option-key-is-meta nil
+      mac-command-key-is-meta t
+      mac-command-modifier 'meta
+      mac-option-modifier 'none))
 
 
 

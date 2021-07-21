@@ -304,6 +304,8 @@ You still need modify `package-archives' in \"init-elpa.el\" to PERMANENTLY use 
 (require-package 'yasnippet)
 (require-package 'yasnippet-snippets)
 (require-package 'company)
+(require-package 'dockerfile-mode)
+(require-package 'docker-compose-mode)
 (require-package 'native-complete)
 (require-package 'company-native-complete)
 (require-package 'company-c-headers)

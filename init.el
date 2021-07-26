@@ -237,18 +237,15 @@
   (local-set-key (kbd "M-.") 'godef-jump)
   (setq compile-command "echo Building... && go build -v && echo Testing... && go test -v && echo Linter... && golint")
   (setq compilation-read-command nil)
-  (define-key (current-local-map) "\C-c\C-c" 'compile)
+  (define-key (current-local-map) "\C-c\C-c" 'compile))
 ;;  (local-set-key (kbd "M-,") 'compile)
 (add-hook 'go-mode-hook 'go-mode-setup)
 
 ;;; I prefer cmd key for meta
-(setq mac-option-key-is-meta nil
-      mac-command-key-is-meta t
-      mac-command-modifier 'meta
-      mac-option-modifier 'none))
-
-
-
+;; (setq mac-option-key-is-meta nil
+;;       mac-command-key-is-meta t
+;;       mac-command-modifier 'meta
+;;       mac-option-modifier 'none))
 
 (require 'bash-completion)
 (bash-completion-setup)

@@ -269,3 +269,7 @@
         next-line))
 (keyfreq-mode 1)
 (keyfreq-autosave-mode 1)
+(set-frame-font "Source Code Pro 12")
+
+(setenv "PATH" (concat (getenv "PATH") ":$HOME/go/bin"))
+(setq exec-path (append exec-path '("/home/tt/go/bin")))

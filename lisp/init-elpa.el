@@ -330,6 +330,7 @@ You still need modify `package-archives' in \"init-elpa.el\" to PERMANENTLY use 
 (require-package 'evil-mark-replace)
 (require-package 'evil-matchit)
 (require-package 'evil-nerd-commenter)
+(require-package 'go-mode)
 (require-package 'evil-surround)
 (require-package 'evil-visualstar)
 (require-package 'undo-fu)

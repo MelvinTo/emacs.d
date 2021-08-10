@@ -313,6 +313,7 @@ You still need modify `package-archives' in \"init-elpa.el\" to PERMANENTLY use 
 (require-package 'lsp-mode)
 (require-package 'elpy)
 (require-package 'legalese)
+(require-package 'bash-completion)
 (require-package 'simple-httpd)
 ;; (require-package 'git-gutter) ; use my patched version
 (require-package 'neotree)

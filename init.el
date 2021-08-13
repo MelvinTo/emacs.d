@@ -273,3 +273,5 @@
 
 (setenv "PATH" (concat (getenv "PATH") ":$HOME/go/bin"))
 (setq exec-path (append exec-path '("/home/tt/go/bin")))
+
+(evil-mode t)

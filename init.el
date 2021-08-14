@@ -275,3 +275,6 @@
 (setq exec-path (append exec-path '("/home/tt/go/bin")))
 
 (evil-mode t)
+
+(global-undo-tree-mode)
+(evil-set-undo-system 'undo-tree)

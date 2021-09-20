@@ -269,7 +269,7 @@
         next-line))
 (keyfreq-mode 1)
 (keyfreq-autosave-mode 1)
-(set-frame-font "Source Code Pro 12")
+(set-frame-font "Cascadia Mono PL 12")
 
 (setenv "PATH" (concat (getenv "PATH") ":$HOME/go/bin"))
 (setq exec-path (append exec-path '("/home/tt/go/bin")))
@@ -278,3 +278,6 @@
 
 (global-undo-tree-mode)
 (evil-set-undo-system 'undo-tree)
+
+;;(custom-set-variables
+;; '(gnutls-algorithm-priority "normal:-vers-tls1.3"))
